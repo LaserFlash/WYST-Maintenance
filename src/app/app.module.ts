@@ -136,7 +136,7 @@ import 'hammerjs';
     MatStepperModule,
     CloudinaryModule.forRoot({Cloudinary}, { cloud_name: 'dhnh6uqep', upload_preset: 'oyywau4l' }),
     FileUploadModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     BoatUsageService,
