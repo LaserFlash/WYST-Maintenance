@@ -78,15 +78,16 @@ export class SortFilterBarComponent implements OnInit {
 
     filtered = filtered.filter(item => {
       if (item.timestampFixed != undefined) {
-        return item.timestampFixed >= this.endMinDate && item.timestampFixed <= this.startMaxDate;
+        return item.timestampFixed.toDate().getTime() >= this.endMinDate && item.timestampFixed.toDate().getTime() <= this.startMaxDate;
       }
-      return item.timestamp >= this.endMinDate && item.timestamp <= this.startMaxDate;
+      return item.timestamp.toDate().getTime() >= this.endMinDate && item.timestamp.toDate().getTime() <= this.startMaxDate;
     })
 
     this.breakages.splice(0, this.breakages.length);
     for (let i = 0; i < filtered.length; i++) {
       this.breakages.push(filtered[i]);
     }
+
   }
 
   /** Add a boat filter to the displayed data */
