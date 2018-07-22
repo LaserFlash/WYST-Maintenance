@@ -18,7 +18,7 @@ import { MatCardModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material';
-import { MatNativeDateModule } from '@angular/material';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatSnackBarModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
@@ -117,7 +117,7 @@ import 'hammerjs';
     MatRadioModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatMomentDateModule,
     ReactiveFormsModule,
     MatSelectModule,
     FlexLayoutModule,
@@ -144,7 +144,7 @@ import 'hammerjs';
     SafetyDocsService,
     BoatPartsService,
     ThemeTrackerService,
-    {provide: HAMMER_GESTURE_CONFIG, useClass: HammerConfig}
+    {provide: HAMMER_GESTURE_CONFIG, useClass: HammerConfig},
   ],
   bootstrap: [AppComponent]
 })
