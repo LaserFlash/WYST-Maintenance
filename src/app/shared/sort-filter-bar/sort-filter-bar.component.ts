@@ -2,8 +2,8 @@ import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { BreakageInfo } from '../../Utils/objects/breakageInfo';
 import { BoatBreakageService } from '../../boat-breakage.service'
 
-import { UserFriendlyBoats, Boats, Parts } from '../../Utils/menuNames'
-import { BoatNameConversionHelper } from '../../Utils/nameConversion'
+import { Parts } from '../../Utils/menuNames'
+import { KnownBoatsService } from '../../known-boats.service'
 
 @Component({
   selector: 'sort-filter-bar',
@@ -19,13 +19,7 @@ export class SortFilterBarComponent implements OnInit {
   @ViewChild('endPicker') endPicker: ElementRef
 
   sortList: string[] = ['Newest', 'Oldest', 'Most Important', 'Least Important', 'Boat'];
-  filterList: string[] = UserFriendlyBoats.filter((s, i) => {
-    let yes = false;
-    Boats.forEach(j => {
-      yes ? true : yes = i === j;
-    })
-    return yes;
-  });
+  filterList;
 
   partfilterList: string[] = Parts;
   appliedFilters: string[] = [];
@@ -36,8 +30,11 @@ export class SortFilterBarComponent implements OnInit {
   endMaxDate: Date = new Date();
   endMinDate: Date = new Date(1997, 8, 27);
 
-  constructor(private breakageService: BoatBreakageService) { }
+  constructor(private breakageService: BoatBreakageService, private BOATS: KnownBoatsService) { }
   ngOnInit() {
+    this.BOATS.boatInformation.subscribe(boats => {
+      this.filterList = boats;
+    });
     this.resetFilter()
   }
 
@@ -70,24 +67,13 @@ export class SortFilterBarComponent implements OnInit {
   private filter() {
     let filtered;
     /* Apply filters taking into account any boat filters also applied */
-    if (this.partappliedFilters.length === 0) {
-      filtered = this.original.filter(item => this.boatFilter(item));
-    } else {
-      filtered = this.breakages.filter(item => this.partFilter(item)).filter(item => this.boatFilter(item));
-    }
-
-    filtered = filtered.filter(item => {
-      if (item.timestampFixed != undefined) {
-        return item.timestampFixed.toDate().getTime() >= this.endMinDate && item.timestampFixed.toDate().getTime() <= this.startMaxDate;
-      }
-      return item.timestamp.toDate().getTime() >= this.endMinDate && item.timestamp.toDate().getTime() <= this.startMaxDate;
-    })
+    filtered = this.original.filter(item => this.partFilter(item)).filter(item => this.boatFilter(item));
 
     this.breakages.splice(0, this.breakages.length);
     for (let i = 0; i < filtered.length; i++) {
       this.breakages.push(filtered[i]);
     }
-
+    this.sort();
   }
 
   /** Add a boat filter to the displayed data */
@@ -112,19 +98,7 @@ export class SortFilterBarComponent implements OnInit {
     } else {
       this.partappliedFilters.push(key);
     }
-
-    let filtered;
-    /* Apply filters taking into account any boat filters also applied */
-    if (this.partappliedFilters.length === 0) {
-      filtered = this.original.filter(item => this.boatFilter(item));
-    } else {
-      filtered = this.breakages.filter(item => this.partFilter(item)).filter(item => this.boatFilter(item));
-    }
-
-    this.breakages.splice(0, this.breakages.length);
-    for (let i = 0; i < filtered.length; i++) {
-      this.breakages.push(filtered[i]);
-    }
+    this.filter()
   }
 
   /** Get the data that meets the filter */
@@ -134,7 +108,8 @@ export class SortFilterBarComponent implements OnInit {
     }
     return this.appliedFilters.some(
       filter => {
-        if (item.boatID === BoatNameConversionHelper.numberFromUserFriendlyName(filter)) {
+        if (String(item.boatID) === String(filter)) {
+          console.log("boat")
           return true;
         }
       });
@@ -148,14 +123,19 @@ export class SortFilterBarComponent implements OnInit {
     return this.partappliedFilters.some(
       filter => {
         if (item.part === filter) {
+          console.log("part")
           return true;
         }
       });
   }
 
-  /** Sort the data */
   private changeSort(sort: string) {
     this.sortBy = sort;
+    this.sort();
+  }
+  /** Sort the data */
+  private sort() {
+    const sort = this.sortBy;
     if (sort === 'Newest') {
       this.breakages.sort((a, b) => {
         if (a.timestampFixed != undefined && b.timestampFixed != undefined) {
