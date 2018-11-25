@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UsageInfo } from '../../../Utils/objects/usageInfo';
-import { Boats, UserFriendlyBoats } from '../../../Utils/menuNames'
 
 import { BoatUsageService } from '../../../boat-usage.service'
-import { BoatNameConversionHelper } from '../../../Utils/nameConversion'
+import { KnownBoatsService } from '../../../known-boats.service';
 
 
 @Component({
@@ -32,32 +31,36 @@ export class UsageGraphsComponent implements OnInit {
   };
 
   // Only use boat data for boats with a userfriendly name
-  chartLabels: string[] = UserFriendlyBoats.filter((s, i) => {
-    let yes = false;
-    Boats.forEach(j => {
-      yes ? true : yes = i === j;
-    })
-    return yes;
-  });
+  chartLabels: string[];
 
   public chartType = 'bar';
   public chartLegend = true;
 
-  usageLastMonth: number[];
+  usageLastMonth: { boat: string, duration: number }[];
 
-  constructor(private usageService: BoatUsageService) {
-    this.usageLastMonth = usageService.lastMonthUsageEachBoat;
-  }
-
-  ngOnInit() {
-    this.chartData = [{ data: this.usageService.usageTimes, label: this.dataLabel}];
-    this.usageService.items.subscribe(() => {
-      this.chartData = [{ data: this.usageService.usageTimes, label: this.dataLabel}];
+  constructor(private usageService: BoatUsageService, private BOATS: KnownBoatsService) {
+    usageService.lastMonthEachBoat.subscribe(usages => {
+      this.usageLastMonth = usages;
     });
   }
 
+  ngOnInit() {
+
+    this.usageService.usageTimes.subscribe((data) => {
+      const builtLabelList = [];
+      const builtDataList = [];
+      Object.keys(data).forEach(key => {
+        builtDataList.push(data[key].duration);
+        builtLabelList.push(this.BOATS.getBoatName(data[key].boat));
+      });
+      this.chartData[0].data = builtDataList;
+      this.chartLabels = builtLabelList;
+    });
+
+  }
+
   private getBoatName(v) {
-    return BoatNameConversionHelper.boatNameFromNumber(v);
+    return this.BOATS.getBoatName(v);
   }
 
 }

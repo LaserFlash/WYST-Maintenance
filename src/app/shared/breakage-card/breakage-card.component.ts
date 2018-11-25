@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { BreakageInfo } from '../../Utils/objects/breakageInfo'
-import { UserFriendlyBoats } from '../../Utils/menuNames'
-import { BoatNameConversionHelper, ImportanceConversionHelper } from '../../Utils/nameConversion'
+import { BreakageInfo } from '../../Utils/objects/breakageInfo';
 
+import { ImportanceConversionHelper } from '../../Utils/nameConversion';
 import { DialogsService } from '../dialog/dialogs.service';
-import { ThemeTrackerService } from '../../theme-tracker.service'
+import { ThemeTrackerService } from '../../theme-tracker.service';
+
+import { KnownBoatsService } from '../../known-boats.service';
 
 @Component({
   selector: 'breakage-card',
@@ -20,7 +21,8 @@ export class BreakageCardComponent {
 
   constructor(
     private themeTracker: ThemeTrackerService,
-    private dialogsService: DialogsService
+    private dialogsService: DialogsService,
+    private BOATS: KnownBoatsService
   ) {
     this.isDarkTheme = themeTracker.isDark;
   }
@@ -30,7 +32,7 @@ export class BreakageCardComponent {
   }
 
   private getBoatName(v) {
-    return BoatNameConversionHelper.boatNameFromNumber(v);
+    return this.BOATS.getBoatName(v);
   }
 
   private getImportanceName(v) {
@@ -57,5 +59,15 @@ export class BreakageCardComponent {
   private openModal(id: string) {
     const base = 'https://res.cloudinary.com/dhnh6uqep/image/upload/q_auto//url'
     this.dialogsService.imageModal(base.replace('url', id));
+  }
+
+  private makeDate(date: any) {
+    try {
+      return date.toDate();
+    }
+    catch (error) {
+      return date;
+    }
+
   }
 }

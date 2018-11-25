@@ -11,8 +11,8 @@
                 <td>
                   <mat-radio-group class="radio-group" formControlName="boatID" required>
                     <label> Boat Number</label>
-                    <mat-radio-button class="radio-button" *ngFor="let id of boats" [value]="id">
-                      {{id}}
+                    <mat-radio-button class="radio-button" *ngFor="let boat of boats" [value]="boat.id">
+                      {{boat.name}}
                     </mat-radio-button>
                     <mat-error *ngIf="formErrors.boatID">
                       {{formErrors.boatID}}
@@ -23,12 +23,12 @@
                 <td>
                   <table>
                     <tr>
-                      <mat-input-container>
+                      <mat-form-field>
                         <input matInput type="number" placeholder="Duration in hours" [min]="0" formControlName="duration" required>
                         <mat-error *ngIf="formErrors.duration">
                           {{formErrors.duration}}
                         </mat-error>
-                      </mat-input-container>
+                      </mat-form-field>
                     </tr>
                     <tr>
                       <mat-form-field>
