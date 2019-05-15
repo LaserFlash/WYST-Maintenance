@@ -13,7 +13,7 @@
 
   <span fxHide.lt-md>
     <nav mat-tab-nav-bar>
-      <a mat-tab-link *ngFor="let routeLink of routeLinks" [routerLink]="getRouteLink(routeLink.link)" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+      <a mat-tab-link *ngFor="let routeLink of routeLinks" [routerLink]="getRouteLink(routeLink.link)" [active]="checkActive(routeLink.link)">
         {{routeLink.label}}
       </a>
     </nav>
@@ -53,6 +53,9 @@
       <a style="text-decoration: none;" href="https://github.com/LaserFlash/WYST-Maintenance" mat-list-item>
         <img width="32" width="32" src="https://unpkg.com/simple-icons@latest/icons/github.svg" /> &nbsp; Source Code
       </a>
+      <mat-list-item>
+        Build {{build}}
+      </mat-list-item>
     </mat-list>
   </mat-sidenav>
 
@@ -65,7 +68,7 @@
   <!-- Bottom Navigation Bar -->
   <div class="bottom-navigation bg-color-primary" fxHide.gt-sm>
     <nav mat-tab-nav-bar>
-      <a fxFlex="calc(100%/{{routeLinks.length}})" mat-tab-link *ngFor="let routeLink of routeLinks" [routerLink]="getRouteLink(routeLink.link)" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+      <a fxFlex="calc(100%/{{routeLinks.length}})" mat-tab-link *ngFor="let routeLink of routeLinks" [routerLink]="getRouteLink(routeLink.link)" [active]="checkActive(routeLink.link)">
 
         <div fxLayout="column">
           <div fxFlex>
