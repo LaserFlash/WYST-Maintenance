@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { ThemeTrackerService } from './theme-tracker.service';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from './core/auth/authentication.service';
 
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -22,10 +22,10 @@ export class AppComponent implements OnInit {
   public themeBackground = "#eceff1";
   isAdmin: boolean;
   routeLinks = [
-    { label: 'Report', link: 'report' },
-    { label: 'View', link: 'view' },
-    { label: 'Stats', link: 'stats' },
-    { label: 'Docs', link: 'docs' },
+    { label: 'Report', link: 'report', name: 'report' },
+    { label: 'View', link: 'view', name: 'view' },
+    { label: 'Stats', link: 'stats', name: 'stats' },
+    { label: 'Docs', link: 'docs', name: 'docs' },
   ];
 
   adminLink = { label: 'Admin Panel', link: 'admin' };
@@ -36,7 +36,12 @@ export class AppComponent implements OnInit {
   }
 
 
-  constructor(private themeTracker: ThemeTrackerService, private router: Router, iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, public AUTH: AuthenticationService) {
+  constructor(
+    private themeTracker: ThemeTrackerService,
+    private router: Router, iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer,
+    public AUTH: AuthenticationService
+  ) {
     /* Apply theme at start */
     this.isDarkTheme = themeTracker.isDark;
     this.setBackground();
@@ -79,7 +84,7 @@ export class AppComponent implements OnInit {
     this.setBackground();
   }
 
-  private setBackground(){
+  private setBackground() {
     if (this.isDarkTheme) {
       this.themeBackground = "#212121"
     } else {
