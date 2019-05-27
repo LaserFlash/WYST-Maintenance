@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "wyst-maintenance"
+    "default": "wyst-maintenance",
+    "dev": "breakagestest"
   }
 }
