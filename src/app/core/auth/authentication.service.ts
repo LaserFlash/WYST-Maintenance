@@ -6,12 +6,12 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class AuthenticationService {
+
   public authState: BehaviorSubject<boolean> = new BehaviorSubject(false);
   public isAdmin: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(private afAuth: AngularFireAuth, db: AngularFireDatabase) {
     this.afAuth.authState.subscribe((data) => {
-      console.log(data)
       if (!data) {
         this.isAdmin.next(false);
         this.authState.next(false);
@@ -19,13 +19,16 @@ export class AuthenticationService {
 
       if (data != null) {
         this.afAuth.auth.currentUser.getIdTokenResult().then((idTokenResult) => {
+          this.authState.next(true); // Is now authenticated
+
           // Confirm the user is an Admin.
           if (!!idTokenResult.claims.admin) {
             this.isAdmin.next(true);
-          } else {
-            this.isAdmin.next(false);
+            return;
           }
-          this.authState.next(true);
+
+          this.isAdmin.next(false); //If reached no an admin
+
         }).catch(() => {
           this.isAdmin.next(false);
         });
@@ -33,6 +36,7 @@ export class AuthenticationService {
     });
   }
 
+  /* Logout the current user */
   public logout() {
     this.afAuth.auth.signOut();
   }
