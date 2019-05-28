@@ -12,6 +12,7 @@ export class AuthenticationService {
 
   constructor(private afAuth: AngularFireAuth, db: AngularFireDatabase) {
     this.afAuth.authState.subscribe((data) => {
+      console.log(data)
       if (!data) {
         this.isAdmin.next(false);
         this.authState.next(false);
