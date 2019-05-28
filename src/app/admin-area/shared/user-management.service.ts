@@ -9,6 +9,14 @@ import { AuthenticationService } from '../../core/auth/authentication.service';
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+* UserManagementService - provides functionality to change the role of a user
+*   - Upgrade to admin
+*   - Downgrade to user
+*   - Retrieve users
+*
+*/
 export class UserManagementService {
 
   public users: BehaviorSubject<User[]> = new BehaviorSubject([]);
@@ -30,10 +38,12 @@ export class UserManagementService {
     });
   }
 
+  /* Elevate the given user (by key) */
   upgradeToAdmin(key: string) {
     this.DB.object('/userProfile/' + key).update({ role: 'admin' });
   }
 
+  /* Downgrade the given user (by key) */
   downgradeToUser(key: string) {
     this.DB.object('/userProfile/' + key).update({ role: 'user' });
   }

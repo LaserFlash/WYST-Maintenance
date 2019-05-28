@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 import { BreakageInfo } from '../../core/objects/breakageInfo';
 import { ImportanceConversionHelper } from '../../core/constants/menu-names/nameConversion';
@@ -12,7 +12,7 @@ import { ThemeTrackerService } from '../../theme-tracker.service';
   templateUrl: './breakage-card.component.html',
   styleUrls: ['./breakage-card.component.css']
 })
-export class BreakageCardComponent {
+export class BreakageCardComponent implements OnInit {
   isDarkTheme: boolean;
 
   @Input() buttonText: string;
@@ -24,7 +24,14 @@ export class BreakageCardComponent {
     private dialogsService: DialogsService,
     private BOATS: KnownBoatsService
   ) {
-    this.isDarkTheme = themeTracker.isDark;
+    /* Apply theme at start & whenever a change*/
+    this.themeTracker.isDark.subscribe((dark) => {
+      this.isDarkTheme = dark;
+    });
+  }
+
+  ngOnInit() {
+
   }
 
   private openDialog(key: any) {
