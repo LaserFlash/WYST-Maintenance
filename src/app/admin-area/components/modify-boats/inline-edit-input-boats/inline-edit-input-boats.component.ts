@@ -7,6 +7,11 @@ import { Boat } from '../../../../core/objects/boat';
   templateUrl: './inline-edit-input-boats.component.html',
   styleUrls: ['./inline-edit-input-boats.component.css']
 })
+
+/**
+* Allow editing of boat names / identifier
+*   and indicating if they should be displayed in reporting menus
+**/
 export class InlineEditInputBoatsComponent implements OnInit {
 
   @Input() value: Boat;
@@ -17,14 +22,16 @@ export class InlineEditInputBoatsComponent implements OnInit {
   title: string;
   remove = false;
   done = false;
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit() {
     this.updatedDoc = Object.assign({}, this.value);
   }
 
+  /* Emit event with the boat and changed values */
   submitEdit() {
-    this.done = true;
+    this.done = true; //Triggers colour change (for user feedback)
     this.update.emit({ updatedDoc: this.updatedDoc, originalDoc: this.value });
   }
 
