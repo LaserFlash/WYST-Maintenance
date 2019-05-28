@@ -20,7 +20,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
-import { SharedServicesModule } from './shared-services.module';
+import { SharedServicesModule } from './core/shared-services.module';
 
 
 import { environment } from '../environments/environment';
