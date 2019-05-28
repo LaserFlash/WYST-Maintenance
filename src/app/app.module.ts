@@ -25,7 +25,6 @@ import { SharedServicesModule } from './shared-services.module';
 
 import { environment } from '../environments/environment';
 
-import { CookieModule } from 'ngx-cookie';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
@@ -69,7 +68,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    CookieModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     MatSidenavModule,
     MatTabsModule,

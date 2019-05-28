@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { ThemeTrackerService } from './theme-tracker.service';
+import { ThemeTrackerService } from './core/theme/theme-tracker.service';
 import { AuthenticationService } from './core/auth/authentication.service';
 
 import { MatIconRegistry } from '@angular/material/icon';

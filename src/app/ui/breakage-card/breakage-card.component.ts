@@ -5,7 +5,7 @@ import { ImportanceConversionHelper } from '../../core/constants/menu-names/name
 
 import { KnownBoatsService } from '../../core/constants/known-boats/known-boats.service';
 import { DialogsService } from './dialog/dialogs.service';
-import { ThemeTrackerService } from '../../theme-tracker.service';
+import { ThemeTrackerService } from '../../core/theme/theme-tracker.service';
 
 @Component({
   selector: 'breakage-card',
