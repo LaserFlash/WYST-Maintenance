@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   build: string;
   isDarkTheme: boolean;
 
-  public themeBackground = "#eceff1";
+  public themeBackground = '#eceff1';
 
   isAdmin: boolean;
   routeLinks = [
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 
   adminLink = { label: 'Admin Panel', link: 'admin' };
 
-  @HostBinding("attr.style")
+  @HostBinding('attr.style')
   public get valueAsStyle(): any {
     return this.sanitizer.bypassSecurityTrustStyle(`--bg-colour: ${this.themeBackground}`);
   }
@@ -91,9 +91,9 @@ export class AppComponent implements OnInit {
 
   private setBackground() {
     if (this.isDarkTheme) {
-      this.themeBackground = "#212121"
+      this.themeBackground = '#212121';
     } else {
-      this.themeBackground = "#eceff1";
+      this.themeBackground = '#eceff1';
     }
   }
 

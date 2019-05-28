@@ -10,7 +10,7 @@ import { UsageInfo } from '../../../../../core/objects/usageInfo';
   styleUrls: ['./last-uses.component.css']
 })
 export class LastUsesComponent implements OnInit {
-  
+
   usage: UsageInfo[];
 
   constructor(

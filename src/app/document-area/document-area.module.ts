@@ -9,9 +9,9 @@ import { SafetyDocsComponent } from './pages/safety-docs/safety-docs.component';
 import { BoatPartsComponent } from './pages/boat-parts/boat-parts.component';
 
 /* Import Services/Providers */
-import { BoatPartsService } from './shared/boat-parts/boat-parts.service'
-import { SafetyDocsService } from './shared/safety-docs/safety-docs.service'
-import { AuthenticationService } from '../core/auth/authentication.service'
+import { BoatPartsService } from './shared/boat-parts/boat-parts.service';
+import { SafetyDocsService } from './shared/safety-docs/safety-docs.service';
+import { AuthenticationService } from '../core/auth/authentication.service';
 
 /* Import reusable UI */
 import { InlineEditInputComponent } from '../ui/inline-edit-input/inline-edit-input.component';
@@ -30,7 +30,7 @@ import { MatInputModule } from '@angular/material';
 import { MatSnackBar } from '@angular/material';
 
 import { FormsModule } from '@angular/forms';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [

@@ -17,9 +17,9 @@ import { Component } from '@angular/core';
         </mat-dialog-actions>
     `,
 })
-export class ConfirmDialog {
+export class ConfirmDialogComponent {
     public title: string;
     public message: string;
     public button: string;
-    constructor(public dialogRef: MatDialogRef<ConfirmDialog>) {}
+    constructor(public dialogRef: MatDialogRef<ConfirmDialogComponent>) {}
 }

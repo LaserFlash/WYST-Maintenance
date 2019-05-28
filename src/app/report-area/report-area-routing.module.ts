@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 /* Import Services/Providers */
-import { BoatBreakageService } from './shared/boat-breakage.service'
-import { BoatUsageService } from './shared/boat-usage.service'
+import { BoatBreakageService } from './shared/boat-breakage.service';
+import { BoatUsageService } from './shared/boat-usage.service';
 
 
 /* Import the sub-pages */

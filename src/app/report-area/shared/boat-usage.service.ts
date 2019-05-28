@@ -82,8 +82,7 @@ export class BoatUsageService {
   private makeDate(date: any) {
     try {
       return date.toDate();
-    }
-    catch (error) {
+    } catch (error) {
       return date;
     }
   }

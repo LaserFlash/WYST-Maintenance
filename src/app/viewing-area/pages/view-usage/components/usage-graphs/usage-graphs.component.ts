@@ -43,7 +43,7 @@ export class UsageGraphsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    
+
     this.usageService.lastMonthEachBoat.subscribe(usages => {
       this.usageLastMonth = usages;
     });

@@ -55,15 +55,15 @@ export class BreakageCardComponent implements OnInit {
 
   private getBGColour(n: number) {
     if (this.isDarkTheme) {
-      if (n === 3) { return '#B85750' }
-      if (n === 2) { return '#964f00' }
-      if (n === 1) { return '#D5A253' }
-      if (n === 0) { return '#68768A' }
+      if (n === 3) { return '#B85750'; }
+      if (n === 2) { return '#964f00'; }
+      if (n === 1) { return '#D5A253'; }
+      if (n === 0) { return '#68768A'; }
     }
-    if (n === 3) { return '#ff867c' }
-    if (n === 2) { return '#ff8a50' }
-    if (n === 1) { return '#fff263' }
-    if (n === 0) { return '#6ab7ff' }
+    if (n === 3) { return '#ff867c'; }
+    if (n === 2) { return '#ff8a50'; }
+    if (n === 1) { return '#fff263'; }
+    if (n === 0) { return '#6ab7ff'; }
   }
 
   private getUnderlay(s: string) {
@@ -71,15 +71,14 @@ export class BreakageCardComponent implements OnInit {
   }
 
   private openModal(id: string) {
-    const base = 'https://res.cloudinary.com/dhnh6uqep/image/upload/q_auto//url'
+    const base = 'https://res.cloudinary.com/dhnh6uqep/image/upload/q_auto//url';
     this.dialogsService.imageModal(base.replace('url', id));
   }
 
   private makeDate(date: any) {
     try {
       return date.toDate();
-    }
-    catch (error) {
+    } catch (error) {
       return date;
     }
 

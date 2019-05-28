@@ -18,12 +18,12 @@ export class ThemeTrackerService {
    }
 
   /* Update the theme state and store in cookie */
-  public setDark(b: boolean){
+  public setDark(b: boolean) {
     this.isDark.next(b);
 
-    //Save in a cookie
-    const cookieOptions: CookieOptions = { expires: new Date(32525112147000)}
-    this.cookieService.put('wyst', (b ? 1 : 0).toString(), cookieOptions)
+    // Save in a cookie
+    const cookieOptions: CookieOptions = { expires: new Date(32525112147000)};
+    this.cookieService.put('wyst', (b ? 1 : 0).toString(), cookieOptions);
   }
 
 }

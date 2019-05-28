@@ -1,4 +1,4 @@
-import { Levels } from './menuNames'
+import { Levels } from './menuNames';
 
 export class ImportanceConversionHelper {
   public static numberFromImportance(s) {

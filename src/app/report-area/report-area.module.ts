@@ -35,7 +35,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { ChartsModule } from 'ng2-charts';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { FileUploadModule } from 'ng2-file-upload';
 import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';

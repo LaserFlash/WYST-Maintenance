@@ -15,7 +15,7 @@ export class DocumentAreaComponent implements OnInit {
   routeLinks = [
     {label: 'Health & Safety' , link: 'safety'},
     {label: 'Parts' , link: 'parts'},
-  ]
+  ];
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 

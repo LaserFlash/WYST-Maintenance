@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SignupComponent } from './core/auth/signup/signup.component';
 
@@ -22,13 +22,12 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 
 import { SharedServicesModule } from './core/shared-services.module';
 
-
 import { environment } from '../environments/environment';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import { HammerConfig } from './hammer.config'
+import { HammerConfig } from './hammer.config';
 import 'hammerjs';
 
 import { AngularFireModule } from '@angular/fire';
@@ -50,7 +49,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
   autoUpgradeAnonymousUsers: true
 };
-
 
 @NgModule({
   declarations: [

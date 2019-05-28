@@ -11,7 +11,7 @@ const routes: Routes = [
     path: '',
     component: DocumentAreaComponent,
     children: [
-      {path: '', redirectTo: 'safety', pathMatch:'full'},
+      {path: '', redirectTo: 'safety', pathMatch: 'full'},
       { path: 'safety', component: SafetyDocsComponent, data: { state: '0' }  },
       { path: 'parts', component: BoatPartsComponent, data: { state: '1' } },
       { path: '**', redirectTo: 'safety' },

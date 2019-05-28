@@ -3,10 +3,10 @@ import { DateAdapter } from '@angular/material';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 
-import { BoatUsageService } from '../../shared/boat-usage.service'
-import { KnownBoatsService } from '../../../core/constants/known-boats/known-boats.service'
-import { UsageInfo } from '../../../core/objects/usageInfo'
-import { BoatID } from '../../../core/objects/boat'
+import { BoatUsageService } from '../../shared/boat-usage.service';
+import { KnownBoatsService } from '../../../core/constants/known-boats/known-boats.service';
+import { UsageInfo } from '../../../core/objects/usageInfo';
+import { BoatID } from '../../../core/objects/boat';
 
 const NUMBER_REGEX = /[0-9]+/;
 
@@ -56,7 +56,7 @@ export class ReportUsageComponent {
         this.boats = boats.filter((boat) => {
           return boat.selectable;
         });
-      })
+      });
     }
 
   /** Build the form */
@@ -101,7 +101,7 @@ export class ReportUsageComponent {
         this.usageForm.get('boatID').value,
         this.usageForm.get('duration').value,
         this.usageForm.get('date').value.toDate()
-      )
+      );
 
       this.usageService.addUsageInfo(usage).then(
         () => (

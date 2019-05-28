@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ViewingAreaRoutingModule } from './viewing-area-routing.module';
 
 /* Import Services/Providers */
-import { BoatBreakageService } from './shared/boat-breakage.service'
-import { BoatUsageService } from './shared/boat-usage.service'
+import { BoatBreakageService } from './shared/boat-breakage.service';
+import { BoatUsageService } from './shared/boat-usage.service';
 
 /* Import the sub-pages */
 import { ViewingAreaComponent } from './viewing-area.component';
@@ -34,7 +34,7 @@ import { MatInputModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 
 import { ChartsModule } from 'ng2-charts';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [

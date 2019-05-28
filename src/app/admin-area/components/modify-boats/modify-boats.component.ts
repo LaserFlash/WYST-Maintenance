@@ -42,8 +42,8 @@ export class ModifyBoatsComponent implements OnInit {
     const updatedDoc = updatedOriginalDocs.updatedDoc;
     const originalDoc = updatedOriginalDocs.originalDoc;
 
-    originalDoc.id = this.BOATS.addOrUpdateDoc(updatedDoc); //Commit to DB
-    
+    originalDoc.id = this.BOATS.addOrUpdateDoc(updatedDoc); // Commit to DB
+
     this.snackBar.open('Modified the boat', 'Undo', {
       duration: 2000,
     }).onAction().subscribe(() => {

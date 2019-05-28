@@ -8,28 +8,6 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class BoatBreakageService {
-  private itemsCollectionBroken: AngularFirestoreCollection<BreakageInfo>;
-  private itemsCollectionFixed: AngularFirestoreCollection<BreakageInfo>;
-
-  private items: BreakageInfo[] = [];
-
-  public getItems(){
-    return this.items;
-  }
-
-  private original: BreakageInfo[] = [];
-
-  public getOriginal(){
-    return this.original;
-  }
-
-  public recentItems: BreakageInfo[] = [];
-  public fixedItems: BreakageInfo[] = [];
-  public fixedItemsOriginal: BreakageInfo[] = [];
-
-  private itemsData: Observable<BreakageInfo[]>;
-  private recentThreeItems: Observable<BreakageInfo[]>;
-  private fixedItemsData: Observable<BreakageInfo[]>;
 
   constructor(private db: AngularFirestore) {
 
@@ -42,7 +20,7 @@ export class BoatBreakageService {
           const data = action.payload.doc.data() as BreakageInfo;
           const id = action.payload.doc.id;
           return { ...data, id };
-        })
+        });
       })
     );
     this.itemsData.subscribe(val => { this.buildBreakages(val, this.items); });
@@ -53,6 +31,28 @@ export class BoatBreakageService {
     this.fixedItemsData = this.itemsCollectionFixed.valueChanges();
     this.fixedItemsData.subscribe(val => { this.buildBreakages(val, this.fixedItems); });
     this.fixedItemsData.subscribe(val => { this.buildBreakages(val, this.fixedItemsOriginal); });
+  }
+  private itemsCollectionBroken: AngularFirestoreCollection<BreakageInfo>;
+  private itemsCollectionFixed: AngularFirestoreCollection<BreakageInfo>;
+
+  private items: BreakageInfo[] = [];
+
+  private original: BreakageInfo[] = [];
+
+  public recentItems: BreakageInfo[] = [];
+  public fixedItems: BreakageInfo[] = [];
+  public fixedItemsOriginal: BreakageInfo[] = [];
+
+  private itemsData: Observable<BreakageInfo[]>;
+  private recentThreeItems: Observable<BreakageInfo[]>;
+  private fixedItemsData: Observable<BreakageInfo[]>;
+
+  public getItems() {
+    return this.items;
+  }
+
+  public getOriginal() {
+    return this.original;
   }
 
   /** Move a current breakage from an issue to fixed */

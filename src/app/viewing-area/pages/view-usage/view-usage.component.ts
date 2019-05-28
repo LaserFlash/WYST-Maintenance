@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UsageInfo } from '../../../core/objects/usageInfo'
+import { UsageInfo } from '../../../core/objects/usageInfo';
 import { KnownBoatsService } from '../../../core/constants/known-boats/known-boats.service';
 
 
