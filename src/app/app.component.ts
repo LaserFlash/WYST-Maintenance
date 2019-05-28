@@ -19,7 +19,9 @@ export class AppComponent implements OnInit {
   title = 'WYST';
   build: string;
   isDarkTheme: boolean;
+
   public themeBackground = "#eceff1";
+
   isAdmin: boolean;
   routeLinks = [
     { label: 'Report', link: 'report', name: 'report' },
@@ -43,7 +45,10 @@ export class AppComponent implements OnInit {
     public AUTH: AuthenticationService
   ) {
     /* Apply theme at start */
-    this.isDarkTheme = themeTracker.isDark;
+    this.themeTracker.isDark.subscribe(dark => {
+      this.isDarkTheme = dark;
+    });
+
     this.setBackground();
 
     iconRegistry.addSvgIcon('docs',

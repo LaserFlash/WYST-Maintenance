@@ -9,15 +9,15 @@ import { AuthenticationService } from '../authentication.service';
 export class SignupComponent implements OnInit {
   public authState: boolean;
 
-  constructor(public FIREBASE_AUTH: AuthenticationService) {
-    FIREBASE_AUTH.authState.subscribe(bool => {
+  constructor(public FIREBASE_AUTH: AuthenticationService) {}
+
+  ngOnInit() {
+    this.FIREBASE_AUTH.authState.subscribe(bool => {
       this.authState = bool;
     });
   }
 
-  ngOnInit() {
-  }
-
+  /* Logout the current user */
   logout() {
     this.FIREBASE_AUTH.logout();
   }
