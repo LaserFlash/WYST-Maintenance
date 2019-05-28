@@ -8,7 +8,7 @@
         Displays the known boats and allows for modification
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <mat-list>
+    <mat-selection-list>
       <h3 mat-subheader>Boats</h3>
       <div *ngFor="let info of boatInfo">
         <app-inline-edit-input-boats [value]="info" (update)="setDocItem($event)"></app-inline-edit-input-boats>
@@ -16,7 +16,7 @@
       <button mat-icon-button (click)="addItem()">
         <mat-icon>add</mat-icon>
       </button>
-    </mat-list>
+    </mat-selection-list>
   </mat-expansion-panel>
 </mat-accordion>
 
