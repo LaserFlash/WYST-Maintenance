@@ -4,12 +4,10 @@ import { CommonModule } from '@angular/common';
 /* Import Building components */
 import { BreakageCardComponent } from './breakage-card.component';
 import { DialogsModule } from './dialog/dialogs.module';
-
-import { KnownBoatsService } from '../../core/constants/known-boats/known-boats.service';
 import { DialogsService } from './dialog/dialogs.service';
-import { ThemeTrackerService } from '../../theme-tracker.service';
 import { ImportanceConversionHelper } from '../../core/constants/menu-names/nameConversion';
 
+import { SharedServicesModule } from '../../shared-services.module';
 
 /* Import Material2 */
 import { MatCardModule } from '@angular/material/card';
@@ -28,13 +26,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     FlexLayoutModule,
     MatCardModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    SharedServicesModule
 
   ],
   providers: [
-    KnownBoatsService,
     DialogsService,
-    ThemeTrackerService,
     ImportanceConversionHelper
   ],
   exports: [
