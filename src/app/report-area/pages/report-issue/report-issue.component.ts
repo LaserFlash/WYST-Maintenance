@@ -24,7 +24,7 @@ import { Cloudinary } from '@cloudinary/angular-5.x';
 })
 
 export class ReportIssueComponent implements OnInit {
-  @ViewChild('stepper') stepper: MatStepper;
+  @ViewChild('stepper', { static: true }) stepper: MatStepper;
 
   isLinear = true;
   imageLoaded = true;

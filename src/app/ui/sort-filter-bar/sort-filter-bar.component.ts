@@ -16,8 +16,8 @@ export class SortFilterBarComponent implements OnInit {
   @Input() breakages: BreakageInfo[];
   @Input() original: BreakageInfo[];
 
-  @ViewChild('startPicker') startPicker: ElementRef;
-  @ViewChild('endPicker') endPicker: ElementRef;
+  @ViewChild('startPicker', { static: true }) startPicker: ElementRef;
+  @ViewChild('endPicker', { static: true }) endPicker: ElementRef;
 
   sortList: string[] = [
     'Newest',

@@ -4,23 +4,23 @@ import { RouterModule, Routes, Router } from '@angular/router';
 const routes: Routes = [
   {
     path: 'stats',
-    loadChildren: './stats-area/stats-area.module#StatsAreaModule'
+    loadChildren: () => import('./stats-area/stats-area.module').then(m => m.StatsAreaModule)
   },
   {
     path: 'docs',
-    loadChildren: './document-area/document-area.module#DocumentAreaModule'
+    loadChildren: () => import('./document-area/document-area.module').then(m => m.DocumentAreaModule)
   },
   {
     path: 'view',
-    loadChildren: './viewing-area/viewing-area.module#ViewingAreaModule'
+    loadChildren: () => import('./viewing-area/viewing-area.module').then(m => m.ViewingAreaModule)
   },
   {
     path: 'report',
-    loadChildren: './report-area/report-area.module#ReportAreaModule'
+    loadChildren: () => import('./report-area/report-area.module').then(m => m.ReportAreaModule)
   },
   {
     path: 'admin',
-    loadChildren: './admin-area/admin-area.module#AdminAreaModule'
+    loadChildren: () => import('./admin-area/admin-area.module').then(m => m.AdminAreaModule)
   },
   {
     path: '**', redirectTo: 'report'
