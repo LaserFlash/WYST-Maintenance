@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { DateAdapter } from '@angular/material';
+import { DateAdapter } from '@angular/material/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { BoatUsageService } from '../../shared/providers/boat-usage.service';
 import { KnownBoatsService } from '../../../core/constants/known-boats/known-boats.service';

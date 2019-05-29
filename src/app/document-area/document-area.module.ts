@@ -18,16 +18,16 @@ import { InlineEditInputComponent } from '../ui/inline-edit-input/inline-edit-in
 
 /* Import Material2 things */
 import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material';
-import { MatTabsModule } from '@angular/material';
-import { MatIconModule } from '@angular/material';
-import { MatListModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
 
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';

@@ -7,13 +7,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SignupComponent } from './core/auth/signup/signup.component';
 
-import { MatSidenavModule } from '@angular/material';
-import { MatTabsModule } from '@angular/material';
-import { MatListModule } from '@angular/material';
-import { MatToolbarModule } from '@angular/material';
-import { MatButtonModule } from '@angular/material';
-import { MatIconModule } from '@angular/material';
-import { MatCardModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';

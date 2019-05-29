@@ -10,8 +10,8 @@ import { BoatID } from '../../../core/objects/boat';
 import { Levels, Parts } from '../../../core/constants/menu-names/menuNames';
 import { ImportanceConversionHelper } from '../../../core/constants/menu-names/nameConversion';
 
-import { MatSnackBar } from '@angular/material';
-import { MatStepper } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatStepper } from '@angular/material/stepper';
 
 import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-file-upload';
 import { Cloudinary } from '@cloudinary/angular-5.x';
@@ -24,7 +24,7 @@ import { Cloudinary } from '@cloudinary/angular-5.x';
 })
 
 export class ReportIssueComponent implements OnInit {
-  @ViewChild('stepper') stepper: MatStepper;
+  @ViewChild('stepper', { static: true }) stepper: MatStepper;
 
   isLinear = true;
   imageLoaded = true;

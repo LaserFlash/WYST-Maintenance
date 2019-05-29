@@ -9,8 +9,8 @@ import { TmpStatsComponent } from './pages/tmp-stats/tmp-stats.component';
 
 /* Import Material2 things */
 import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material';
-import { MatTabsModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 

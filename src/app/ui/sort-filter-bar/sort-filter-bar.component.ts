@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { DateAdapter } from '@angular/material';
+import { DateAdapter } from '@angular/material/core';
 
 import { BreakageInfo } from '../../core/objects/breakageInfo';
 
@@ -16,8 +16,8 @@ export class SortFilterBarComponent implements OnInit {
   @Input() breakages: BreakageInfo[];
   @Input() original: BreakageInfo[];
 
-  @ViewChild('startPicker') startPicker: ElementRef;
-  @ViewChild('endPicker') endPicker: ElementRef;
+  @ViewChild('startPicker', { static: true }) startPicker: ElementRef;
+  @ViewChild('endPicker', { static: true }) endPicker: ElementRef;
 
   sortList: string[] = [
     'Newest',
