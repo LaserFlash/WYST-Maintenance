@@ -9,10 +9,16 @@ import { ReportUsageComponent } from './pages/report-usage/report-usage.componen
 import { ReportIssueComponent } from './pages/report-issue/report-issue.component';
 import { ReportIncidentComponent } from './pages/report-incident/report-incident.component';
 
+
+/* Import Services/Providers */
+import { BoatBreakageService } from './shared/providers/boat-breakage.service';
+import { BoatUsageService } from './shared/providers/boat-usage.service';
+
 /* Custom Components */
 import { LastUsesComponent } from './pages/report-usage/components/last-uses/last-uses.component';
 import { UsageGraphsComponent } from './pages/report-usage/components/usage-graphs/usage-graphs.component';
 import { BreakageCardModule } from '../ui/breakage-card/breakage-card.module';
+
 /* Forms */
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -77,6 +83,10 @@ import { Cloudinary } from 'cloudinary-core';
     FileUploadModule,
     CloudinaryModule.forRoot({ Cloudinary }, { cloud_name: 'dhnh6uqep', upload_preset: 'oyywau4l' }),
     FileUploadModule,
+  ],
+  providers: [
+    BoatBreakageService,
+    BoatUsageService
   ]
 })
 export class ReportAreaModule { }

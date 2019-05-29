@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { BoatUsageService } from '../../../../shared/boat-usage.service';
+import { BoatUsageService } from '../../providers/boat-usage.service';
 import { KnownBoatsService } from '../../../../../core/constants/known-boats/known-boats.service';
 import { UsageInfo } from '../../../../../core/objects/usageInfo';
 

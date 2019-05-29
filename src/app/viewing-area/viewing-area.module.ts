@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ViewingAreaRoutingModule } from './viewing-area-routing.module';
 
 /* Import Services/Providers */
-import { BoatBreakageService } from './shared/boat-breakage.service';
-import { BoatUsageService } from './shared/boat-usage.service';
+import { BoatBreakageService } from './shared/providers/boat-breakage.service';
+import { BoatUsageService } from './pages/view-usage/providers/boat-usage.service';
 
 /* Import the sub-pages */
 import { ViewingAreaComponent } from './viewing-area.component';

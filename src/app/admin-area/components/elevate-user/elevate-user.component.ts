@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../../core/objects/user';
-import { UserManagementService } from '../../shared/user-management.service';
+import { UserManagementService } from '../../shared/user-management/user-management.service';
 @Component({
   selector: 'elevate-user',
   templateUrl: './elevate-user.component.html',
