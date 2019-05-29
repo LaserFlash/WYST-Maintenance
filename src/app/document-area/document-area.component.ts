@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Router, NavigationEnd } from '@angular/router';
-import { routerTransition } from '../router.animations';
+import { routerTransition } from '../ui/animations/router.animations';
 
 @Component({
   selector: 'app-docs',
@@ -15,7 +15,7 @@ export class DocumentAreaComponent implements OnInit {
   routeLinks = [
     {label: 'Health & Safety' , link: 'safety'},
     {label: 'Parts' , link: 'parts'},
-  ]
+  ];
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 

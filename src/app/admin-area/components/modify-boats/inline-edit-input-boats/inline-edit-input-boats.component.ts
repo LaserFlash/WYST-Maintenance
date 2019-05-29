@@ -31,7 +31,7 @@ export class InlineEditInputBoatsComponent implements OnInit {
 
   /* Emit event with the boat and changed values */
   submitEdit() {
-    this.done = true; //Triggers colour change (for user feedback)
+    this.done = true; // Triggers colour change (for user feedback)
     this.update.emit({ updatedDoc: this.updatedDoc, originalDoc: this.value });
   }
 

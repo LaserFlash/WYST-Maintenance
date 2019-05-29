@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Router, NavigationEnd } from '@angular/router';
-import { routerTransition } from '../router.animations';
+import { routerTransition } from '../ui/animations/router.animations';
 
 @Component({
   selector: 'app-view',
@@ -16,7 +16,7 @@ export class ViewingAreaComponent implements OnInit {
     {label: 'Usage' , link: 'usage'},
     {label: 'Breakages' , link: 'issue'},
     {label: 'Fixed' , link: 'fixed'}
-  ]
+  ];
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 
   router: Router;

@@ -7,14 +7,14 @@ import { DialogsModule } from './dialog/dialogs.module';
 import { DialogsService } from './dialog/dialogs.service';
 import { ImportanceConversionHelper } from '../../core/constants/menu-names/nameConversion';
 
-import { SharedServicesModule } from '../../shared-services.module';
+import { SharedServicesModule } from '../../core/shared-services.module';
 
 /* Import Material2 */
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [

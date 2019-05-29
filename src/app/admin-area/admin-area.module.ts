@@ -19,7 +19,7 @@ import { MatInputModule } from '@angular/material';
 
 import { MatSnackBar } from '@angular/material';
 import { FormsModule } from '@angular/forms';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [

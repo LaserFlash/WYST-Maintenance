@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BoatPartsService } from '../../shared/boat-parts/boat-parts.service'
+import { BoatPartsService } from '../../shared/boat-parts/boat-parts.service';
 import { DocLink } from '../../../core/objects/docLink';
 
 @Component({

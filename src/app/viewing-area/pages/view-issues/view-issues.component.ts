@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakageInfo } from '../../../core/objects/breakageInfo';
-import { BoatBreakageService } from '../../shared/boat-breakage.service'
+import { BoatBreakageService } from '../../shared/providers/boat-breakage.service';
 
 @Component({
   selector: 'view-issues',

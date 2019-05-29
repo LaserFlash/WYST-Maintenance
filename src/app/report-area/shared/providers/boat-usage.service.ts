@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { UsageInfo } from '../../core/objects/usageInfo';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-
-import { KnownBoatsService } from '../../core/constants/known-boats/known-boats.service';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
+import { UsageInfo } from '../../../core/objects/usageInfo';
+import { KnownBoatsService } from '../../../core/constants/known-boats/known-boats.service';
+
+
 @Injectable()
 export class BoatUsageService {
-
   private itemsCollection: AngularFirestoreCollection<UsageInfo>;
   private sortedByDate: UsageInfo[];
 
@@ -69,6 +69,10 @@ export class BoatUsageService {
     });
   }
 
+  addUsageInfo(usage: UsageInfo) {
+    return Promise.resolve(this.itemsCollection.add({ boatID: usage.boatID, duration: usage.duration, date: usage.date }));
+  }
+
   private buildDataList(val: UsageInfo[], array: UsageInfo[]) {
     array.length = 0;
     val.forEach(element => {
@@ -79,8 +83,7 @@ export class BoatUsageService {
   private makeDate(date: any) {
     try {
       return date.toDate();
-    }
-    catch (error) {
+    } catch (error) {
       return date;
     }
   }

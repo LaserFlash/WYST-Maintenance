@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { AngularFireDatabase } from "@angular/fire/database";
-import { AngularFireAuth } from "@angular/fire/auth";
-import { auth } from "firebase";
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
@@ -12,7 +12,7 @@ export class AuthenticationService {
 
   constructor(private afAuth: AngularFireAuth, db: AngularFireDatabase) {
     this.afAuth.authState.subscribe((data) => {
-      console.log(data)
+      console.log(data);
       if (!data) {
         this.isAdmin.next(false);
         this.authState.next(false);
@@ -28,7 +28,7 @@ export class AuthenticationService {
             return;
           }
 
-          this.isAdmin.next(false); //If reached no an admin
+          this.isAdmin.next(false); // If reached not an admin
 
         }).catch(() => {
           this.isAdmin.next(false);

@@ -2,8 +2,8 @@ import { DialogsService } from './dialogs.service';
 import { MatDialogModule, MatButtonModule  } from '@angular/material';
 import { NgModule } from '@angular/core';
 
-import { ConfirmDialog } from './confirm-dialog.component';
-import { ImageModal } from './image-modal.component';
+import { ConfirmDialogComponent } from './confirm-dialog.component';
+import { ImageModalComponent } from './image-modal.component';
 
 @NgModule({
     imports: [
@@ -11,19 +11,19 @@ import { ImageModal } from './image-modal.component';
         MatButtonModule,
     ],
     exports: [
-        ConfirmDialog,
-        ImageModal,
+        ConfirmDialogComponent,
+        ImageModalComponent,
     ],
     declarations: [
-        ConfirmDialog,
-        ImageModal,
+        ConfirmDialogComponent,
+        ImageModalComponent,
     ],
     providers: [
         DialogsService,
     ],
     entryComponents: [
-        ConfirmDialog,
-        ImageModal,
+        ConfirmDialogComponent,
+        ImageModalComponent,
     ],
 })
 export class DialogsModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { BoatUsageService } from '../../../../shared/boat-usage.service';
+import { BoatUsageService } from '../../../../shared/providers/boat-usage.service';
 import { KnownBoatsService } from '../../../../../core/constants/known-boats/known-boats.service';
 import { UsageInfo } from '../../../../../core/objects/usageInfo';
 
@@ -10,7 +10,7 @@ import { UsageInfo } from '../../../../../core/objects/usageInfo';
   styleUrls: ['./last-uses.component.css']
 })
 export class LastUsesComponent implements OnInit {
-  
+
   usage: UsageInfo[];
 
   constructor(

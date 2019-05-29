@@ -68,7 +68,7 @@ export class KnownBoatsService {
     if (boatFound) {
       return boatFound.name;
     } else {
-      return "Unknown Name";
+      return 'Unknown Name';
     }
   }
 }

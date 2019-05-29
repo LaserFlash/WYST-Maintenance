@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
           src={{imageURL}} (click)="dialogRef.close()" />
     `,
 })
-export class ImageModal {
+export class ImageModalComponent {
   public imageURL: string;
-  constructor(public dialogRef: MatDialogRef<ImageModal>) { }
+  constructor(public dialogRef: MatDialogRef<ImageModalComponent>) { }
 }

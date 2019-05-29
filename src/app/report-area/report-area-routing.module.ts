@@ -1,11 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-/* Import Services/Providers */
-import { BoatBreakageService } from './shared/boat-breakage.service'
-import { BoatUsageService } from './shared/boat-usage.service'
-
-
 /* Import the sub-pages */
 import { ReportAreaComponent } from './report-area.component';
 import { ReportUsageComponent } from './pages/report-usage/report-usage.component';
@@ -28,9 +23,5 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [
-    BoatBreakageService,
-    BoatUsageService
-  ]
 })
 export class ReportAreaRoutingModule { }

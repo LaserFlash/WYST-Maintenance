@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class SafetyDocsComponent implements OnInit {
   links: DocLinkID[];
-  editMode: boolean = false;
+  editMode = false;
   admin: boolean;
 
   constructor(
@@ -26,7 +26,7 @@ export class SafetyDocsComponent implements OnInit {
     this.links = this.safetyDocsService.safetyDocLinks;
     this.FIREBASE_AUTH.isAdmin.subscribe(bool => {
       this.admin = bool;
-    })
+    });
   }
 
   isAdmin(): Boolean {

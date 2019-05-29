@@ -3,8 +3,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 
-import { User } from '../../core/objects/user';
-import { AuthenticationService } from '../../core/auth/authentication.service';
+import { User } from '../../../core/objects/user';
+import { AuthenticationService } from '../../../core/auth/authentication.service';
 
 @Injectable({
   providedIn: 'root'
