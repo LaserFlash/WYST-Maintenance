@@ -28,7 +28,7 @@ export class AuthenticationService {
             return;
           }
 
-          this.isAdmin.next(false); // If reached no an admin
+          this.isAdmin.next(false); // If reached not an admin
 
         }).catch(() => {
           this.isAdmin.next(false);
