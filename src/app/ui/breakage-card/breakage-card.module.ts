@@ -11,8 +11,8 @@ import { SharedServicesModule } from '../../core/shared-services.module';
 
 /* Import Material2 */
 import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material';
-import { MatButtonModule } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 

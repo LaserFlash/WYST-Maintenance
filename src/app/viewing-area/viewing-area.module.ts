@@ -21,17 +21,17 @@ import { SortFilterBarComponent } from '../ui/sort-filter-bar/sort-filter-bar.co
 
 /* Import Material2 things */
 import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material';
-import { MatTabsModule } from '@angular/material';
-import { MatIconModule } from '@angular/material';
-import { MatListModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatMenuModule } from '@angular/material';
-import { MatChipsModule } from '@angular/material';
-import { MatDatepickerModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
-import { MatInputModule } from '@angular/material';
-import { MatButtonModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { ChartsModule } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';
