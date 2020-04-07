@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/276e80b7822a431e98cb20df6ae53619)](https://app.codacy.com/manual/LaserFlash/WYST-Maintenance?utm_source=github.com&utm_medium=referral&utm_content=LaserFlash/WYST-Maintenance&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.org/LaserFlash/WYST-Maintenance.svg?branch=master)](https://travis-ci.org/LaserFlash/WYST-Maintenance)
 [![Greenkeeper badge](https://badges.greenkeeper.io/LaserFlash/WYST-Maintenance.svg)](https://greenkeeper.io/)
 
