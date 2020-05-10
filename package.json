@@ -38,7 +38,7 @@
     "ng2-charts": "^2.3.0",
     "ng2-file-upload": "^1.4.0",
     "ngx-cookie": "4.0.0",
-    "rxjs": "^6.5.2",
+    "rxjs": "^6.5.5",
     "rxjs-compat": "^6.5.5",
     "web-animations-js": "github:angular/web-animations-js#release_pr208",
     "zone.js": "~0.9.1"
