@@ -29,7 +29,7 @@
     "@cloudinary/angular-5.x": "^1.0.2",
     "chart.js": "^2.7.3",
     "classlist.js": "^1.1.20150312",
-    "cloudinary-core": "^2.5.0",
+    "cloudinary-core": "^2.11.3",
     "core-js": "^3.6.5",
     "firebase": "^7.14.0",
     "firebaseui": "^4.5.1",
