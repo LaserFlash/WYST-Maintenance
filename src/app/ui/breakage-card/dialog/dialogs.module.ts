@@ -7,24 +7,9 @@ import { ConfirmDialogComponent } from './confirm-dialog.component';
 import { ImageModalComponent } from './image-modal.component';
 
 @NgModule({
-    imports: [
-        MatDialogModule,
-        MatButtonModule,
-    ],
-    exports: [
-        ConfirmDialogComponent,
-        ImageModalComponent,
-    ],
-    declarations: [
-        ConfirmDialogComponent,
-        ImageModalComponent,
-    ],
-    providers: [
-        DialogsService,
-    ],
-    entryComponents: [
-        ConfirmDialogComponent,
-        ImageModalComponent,
-    ],
+  imports: [MatDialogModule, MatButtonModule],
+  exports: [ConfirmDialogComponent, ImageModalComponent],
+  declarations: [ConfirmDialogComponent, ImageModalComponent],
+  providers: [DialogsService],
 })
-export class DialogsModule { }
+export class DialogsModule {}
