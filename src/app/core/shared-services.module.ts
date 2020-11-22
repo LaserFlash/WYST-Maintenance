@@ -12,7 +12,7 @@ import { CookieModule } from 'ngx-cookie';
   ]
 })
 export class SharedServicesModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SharedServicesModule> {
     return {
       ngModule: SharedServicesModule,
       providers: [AuthenticationService, ThemeTrackerService, KnownBoatsService]
