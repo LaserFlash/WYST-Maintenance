@@ -30,7 +30,7 @@
     "chart.js": "^2.9.4",
     "classlist.js": "^1.1.20150312",
     "cloudinary-core": "^2.11.3",
-    "core-js": "^3.7.0",
+    "core-js": "^3.8.1",
     "firebase": "^8.1.1",
     "firebaseui": "^4.7.1",
     "firebaseui-angular": "^5.1.0",
