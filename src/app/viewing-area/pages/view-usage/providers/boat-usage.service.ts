@@ -3,8 +3,7 @@ import { UsageInfo } from '../../../../core/objects/usageInfo';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 import { KnownBoatsService } from '../../../../core/constants/known-boats/known-boats.service';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable ,  BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class BoatUsageService {
